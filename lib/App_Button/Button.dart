@@ -14,24 +14,23 @@ class _ButtonState extends State<Button> {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        ElevatedButton(
-          onPressed: () {},
-          style: const ButtonStyle(
-            backgroundColor: WidgetStatePropertyAll(
-              Colors.orange,
-            ),
-            foregroundColor: WidgetStatePropertyAll(
-              Colors.black,
-            ),
-            shape: WidgetStatePropertyAll(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(
-                  Radius.circular(10),
-                ),
+        SizedBox(
+          height: 60,
+          width: 250,
+          child: ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              foregroundColor: Colors.black,
+              backgroundColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15),
               ),
             ),
+            child: const Text(
+              "ElevatedButton",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+            ),
           ),
-          child: const Text("Login"),
         ),
       ],
     );

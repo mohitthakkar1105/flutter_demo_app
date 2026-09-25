@@ -225,6 +225,149 @@
 // }
 
 
+//------------------ dio wala part hai --------------
+//
+// import 'package:dio/dio.dart';
+// import 'package:flutter/foundation.dart';
+// import 'package:demo_project_mohit/core/api/request_method.dart';
+//
+// class ApiClient {
+//   ApiClient._();
+//
+//   static final ApiClient instance = ApiClient._();
+//
+//   final Dio dio = Dio(
+//     BaseOptions(
+//       baseUrl: 'https://example.com/api',
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json',
+//       },
+//     ),
+//   );
+//
+//   // =======================================================
+//   // GET
+//   // =======================================================
+//
+//   Future<Response> get({
+//     required String url,
+//     Map<String, String>? headers,
+//     Map<String, dynamic>? params,
+//   }) async {
+//     debugPrint('API GET → $url');
+//
+//     final response = await dio.get(
+//       url,
+//       queryParameters: params,
+//       options: Options(
+//         headers: headers,
+//       ),
+//     );
+//
+//     debugPrint(
+//       'API GET Response [${response.statusCode}] → ${response.data}',
+//     );
+//
+//     return response;
+//   }
+//
+//   // =======================================================
+//   // POST / PUT / PATCH / DELETE
+//   // =======================================================
+//
+//   Future<Response> send({
+//     required RequestMethod method,
+//     required String url,
+//     Map<String, String>? headers,
+//     dynamic body,
+//     Map<String, dynamic>? params,
+//   }) async {
+//     debugPrint(
+//       'API ${method.name.toUpperCase()} → $url',
+//     );
+//
+//     final response = await dio.request(
+//       url,
+//       data: body,
+//       queryParameters: params,
+//       options: Options(
+//         method: method.name.toUpperCase(),
+//         headers: headers,
+//       ),
+//     );
+//
+//     debugPrint(
+//       'API ${method.name.toUpperCase()} '
+//           'Response [${response.statusCode}] → ${response.data}',
+//     );
+//
+//     return response;
+//   }
+//
+//   // =======================================================
+//   // MULTIPART
+//   // =======================================================
+//
+//   Future<Response> multipart({
+//     required RequestMethod method,
+//     required String url,
+//     Map<String, String>? headers,
+//     Map<String, dynamic>? fields,
+//     Map<String, dynamic>? files,
+//     Map<String, dynamic>? params,
+//   }) async {
+//     final formData = FormData();
+//
+//     // Fields
+//     if (fields != null) {
+//       fields.forEach((key, value) {
+//         formData.fields.add(
+//           MapEntry(key, value.toString()),
+//         );
+//       });
+//     }
+//
+//     // Files
+//     if (files != null) {
+//       for (final entry in files.entries) {
+//         formData.files.add(
+//           MapEntry(
+//             entry.key,
+//             await MultipartFile.fromFile(
+//               entry.value.path,
+//             ),
+//           ),
+//         );
+//       }
+//     }
+//
+//     debugPrint(
+//       'API MULTIPART ${method.name.toUpperCase()} → $url',
+//     );
+//
+//     final response = await dio.request(
+//       url,
+//       data: formData,
+//       queryParameters: params,
+//       options: Options(
+//         method: method.name.toUpperCase(),
+//         headers: headers,
+//       ),
+//     );
+//
+//     debugPrint(
+//       'API MULTIPART Response '
+//           '[${response.statusCode}] → ${response.data}',
+//     );
+//
+//     return response;
+//   }
+// }
+
+
+//----------------------------- http --------------------
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:demo_project_mohit/core/api/request_method.dart';

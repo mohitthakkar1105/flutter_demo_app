@@ -13,7 +13,7 @@ class _SimpleCarouselState extends State<SimpleCarousel> {
   int currentIndex = 0;
 
   final List<Widget> images = [
-    Image.asset("assets/dice-1.png"),
+    Image.asset("assets/ic_notification.png"),
     Image.asset("assets/dice-2.png"),
     Image.asset("assets/dice-3.png"),
   ];

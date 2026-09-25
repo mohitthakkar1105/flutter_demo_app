@@ -1,3 +1,4 @@
+import 'package:demo_project_mohit/provider/book_provider.dart';
 import 'package:demo_project_mohit/provider/login_provider.dart';
 import 'package:demo_project_mohit/services/notification/notification_service.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -33,7 +34,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => LoginProvider(),
+          create: (context) => BookProvider(),
         ),
       ],
       child: const App(),
@@ -50,7 +51,9 @@ class App extends StatelessWidget {
       theme: theme,
       // home: LoginApiTest(),
       // home: EmailAuthScreen(),
-      home: Button(),
+      home: Scaffold(
+        body: Button(),
+      ),
       debugShowCheckedModeBanner: false,
     );
   }
